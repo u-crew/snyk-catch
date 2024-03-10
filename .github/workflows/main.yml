@@ -5,8 +5,12 @@ on:
   check_run:
 
 jobs:
-  deploy-to-integration:
-    uses: ./.github/workflows/main.yml
-    with:
-      deployment_arguments: ...
-    secrets: inherit
+  run-status-checks:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Setup nodejs
+          uses: actions/setup-node@v4
+          with:
+            node-version: '20.x'
+        - name: Run Checks
+          run: node ./dist/index.js
