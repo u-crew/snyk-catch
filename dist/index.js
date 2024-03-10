@@ -30889,13 +30889,13 @@ try {
   const payload = github.context.payload
   // Check for Snyk OSS License payload
   if(payload.context.startsWith('license/snyk')) {
-    dispayLog()
+    dispayLog(payload)
   }
   else if(payload.context.startsWith('security/snyk')) {
-    dispayLog()
+    dispayLog(payload)
   } 
   else if(payload.context.startsWith('code/snyk')) {
-    dispayLog()
+    dispayLog(payload)
   } else {
     console.log(`Skipping ${payload.context.id}`)
   }
