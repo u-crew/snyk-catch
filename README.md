@@ -1,6 +1,10 @@
 # Snyk Catch
 
-To document everything here on usage
+Snyk PR Status tracker
+
+# NOTE
+
+This is a POC, Not ready for production. Care is needed, use the concept only please.
 
 # To-Do
 
