@@ -1,5 +1,5 @@
-name: Run integration tests
-run-name: Run integration tests
+name: Run Snyk Checks
+run-name: Run Snyk Checks
 on:
   status:
   check_run:
