@@ -5,7 +5,7 @@ To document everything here on usage
 # To-Do
 
 1. Create this in typescript
-
+2. To-Do: Use chalk to note state?
 
 # Dependencies
 
