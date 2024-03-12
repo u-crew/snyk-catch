@@ -14,3 +14,9 @@ This is a POC, Not ready for production. Care is needed, use the concept only pl
 # Dependencies
 
 Please ensure to install `@vercel/ncc` with `yarn global add @vercel/ncc` or with `npm i -g @vercel/ncc` to create a binary from the `index.js` including the `node_modules`
+
+
+
+# Release
+
+Plan to create sample releases for usage by Snyk TSMs
