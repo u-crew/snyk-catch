@@ -18,5 +18,3 @@ Please ensure to install `@vercel/ncc` with `yarn global add @vercel/ncc` or wit
 
 
 # Release
-
-Plan to create sample releases for usage by Snyk TSMs
