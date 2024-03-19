@@ -32,6 +32,7 @@ try {
   // Check for Snyk OSS License payload
   if(payload.context.startsWith('license/snyk')) {
     dispayLog(payload, checkName="open source Licenses")
+    core.setOutput("Snyk Open Source", "Licenses check")
   }
   else if(payload.context.startsWith('security/snyk')) {
     dispayLog(payload, checkName="open source packages")
