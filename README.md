@@ -1,6 +1,6 @@
 # Snyk Catch
 
-Snyk PR Status tracker
+Snyk PR Status tracker using actions.
 
 # NOTE
 
