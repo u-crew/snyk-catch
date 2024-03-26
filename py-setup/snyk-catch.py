@@ -8,15 +8,15 @@ print(type(x))
 event_payload = json.loads(event_payload())
 print(type(event_payload))
 # Check for snyk Open source license in pending state
-if event_payload.context.startswith( "license/snyk") and event_payload.state === 'pending':
+if event_payload.context.startswith( "license/snyk") and event_payload.state == 'pending':
   # Report that 
   print("Snyk Open source license check is in progress")
   action(event_payload, "oss-license-scan")
-elif event_payload.context.startswith( "security/snyk") and event_payload.state === 'pending':
+elif event_payload.context.startswith( "security/snyk") and event_payload.state == 'pending':
   # Report that 
   print("Snyk Open source license check is in progress")
   action(event_payload, "sca-scan")
-elif event_payload.context.startswith( "code/snyk") and event_payload.state === 'pending':
+elif event_payload.context.startswith( "code/snyk") and event_payload.state == 'pending':
   # Report that code scan is in progress
   print("Snyk code is in progress")
   action(event_payload, "code-scan")
