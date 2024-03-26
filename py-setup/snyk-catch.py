@@ -4,8 +4,9 @@ from github_action_utils import event_payload
 # Get payload from the evnents check_run
 x = event_payload()
 print(x)
+print(type(x))
 event_payload = json.loads(event_payload())
-print( typeof event_payload)
+print(type(event_payload))
 # Check for snyk Open source license in pending state
 if event_payload.context.startswith( "license/snyk") and event_payload.state === 'pending':
   # Report that 
