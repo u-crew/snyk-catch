@@ -1,13 +1,17 @@
 import json
 from github_action_utils import event_payload
 
-# Get payload from the evnents check_run
+# Take some action for a payload
+def action(payload, action):
+  print("Taking action", action)
 
+
+# Get payload from the evnents check_run
 event_payload = event_payload()
 
 if event_payload['context'].startswith('license') and event_payload['state'] == 'pending':
   print('Snyk OSS license is pending')
-  action(event_payload, "with pending OSS License")
+  action(payload=event_payload, action="with pending OSS License")
 # Check for snyk Open source license in pending state
 # if event_payload['context'].startswith( "license/snyk") and event_payload['state']== 'pending':
 #   # Report that 
@@ -27,5 +31,3 @@ if event_payload['context'].startswith('license') and event_payload['state'] == 
 
 
 
-def action(payload, action):
-  print("Taking action", action)
