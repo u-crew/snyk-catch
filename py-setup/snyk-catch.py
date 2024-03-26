@@ -6,7 +6,7 @@ from github_action_utils import event_payload
 event_payload = event_payload()
 print(event_payload)
 # Check for snyk Open source license in pending state
-if event_payload.context.startswith( "license/snyk") and event_payload.state == 'pending':
+if event_payload['context'].startswith( "license/snyk") and event_payload.state == 'pending':
   # Report that 
   print("Snyk Open source license check is in progress")
   action(event_payload, "oss-license-scan")
