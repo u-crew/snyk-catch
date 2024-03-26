@@ -9,6 +9,8 @@ def action(payload, action):
 # Get payload from the evnents check_run
 event_payload = event_payload()
 
+print(event_payload['state'])
+
 if event_payload['context'].startswith('license') and event_payload['state'] == 'pending':
   print('Snyk OSS license is pending')
   action(payload=event_payload, action="with pending OSS License")

@@ -16,5 +16,6 @@ jobs:
             python-version: '3.10'
         - name: Python script run
           run: |
+            pip install --upgrade pip
             pip install github-action-utils
             python py-setup/snyk-catch.py
