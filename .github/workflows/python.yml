@@ -1,0 +1,20 @@
+name: Snyk Catch Python
+run-name: Run Snyk Checks Python
+on:
+  status:
+  check_run:
+
+jobs:
+  run-status-checks:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.10'
+        - name: Python script run
+          run: |
+            pip install github-action-utils
+            python py-setup/snyk-catch.py
