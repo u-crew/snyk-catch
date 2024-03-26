@@ -9,27 +9,15 @@ def action(payload, action):
 # Get payload from the evnents check_run
 event_payload = event_payload()
 
-print(event_payload['state'])
 
 if event_payload['context'].startswith('license') and event_payload['state'] == 'pending':
   print('Snyk OSS license is pending')
   action(payload=event_payload, action="with pending OSS License")
-# Check for snyk Open source license in pending state
-# if event_payload['context'].startswith( "license/snyk") and event_payload['state']== 'pending':
-#   # Report that 
-#   print("Snyk Open source license check is in progress")
-#   action(event_payload, "oss-license-scan")
-# elif event_payload['context'].startswith( "security/snyk") and event_payload['state'] == 'pending':
-#   # Report that 
-#   print("Snyk Open source license check is in progress")
-#   action(event_payload, "sca-scan")
-# elif event_payload['context'].startswith( "code/snyk") and event_payload['state'] == 'pending':
-#   # Report that code scan is in progress
-#   print("Snyk code is in progress")
-#   action(event_payload, "code-scan")
-# else:
-#   # Catch-all?
-#   print("Skipping checks")
-
-
-
+elif event_payload['context'].startswith('security') and event_payload['state'] == 'pending':
+  print('Snyk SCA is pending')
+  action(payload=event_payload, action="with pending Snyk SCA scan")
+elif event_payload['context'].startswith('license') and event_payload['state'] == 'pending':
+  print('Snyk code scan is pending')
+  action(payload=event_payload, action="with pending snyk code scan")
+else:
+  print("Taking no action, skipping")
