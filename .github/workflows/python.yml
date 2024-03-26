@@ -1,5 +1,5 @@
-name: Snyk Catch
-run-name: Run Snyk Checks
+name: Snyk Catch Python
+run-name: Run Snyk Checks Python
 on:
   status:
   check_run:
@@ -10,11 +10,11 @@ jobs:
     steps:
         - name: Checkout
           uses: actions/checkout@v4
-        - name: Setup nodejs
+        - name: Setup Python
           uses: actions/setup-python@v5
           with:
             python-version: '3.10'
-        - name: Run Checks
+        - name: Python script run
           run: |
             pip install github-action-utils
             python py-setup/snyk-catch.py
