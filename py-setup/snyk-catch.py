@@ -16,7 +16,7 @@ if event_payload['context'].startswith('license') and event_payload['state'] == 
 elif event_payload['context'].startswith('security') and event_payload['state'] == 'pending':
   print('Snyk SCA is pending')
   action(payload=event_payload, action="with pending Snyk SCA scan")
-elif event_payload['context'].startswith('license') and event_payload['state'] == 'pending':
+elif event_payload['context'].startswith('code') and event_payload['state'] == 'pending':
   print('Snyk code scan is pending')
   action(payload=event_payload, action="with pending snyk code scan")
 else:
